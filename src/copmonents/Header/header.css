@@ -1,0 +1,18 @@
+.navss{
+    text-decoration: none;
+}
+span{
+    color:rgb(50, 50, 250);
+}
+.span2{
+    color: rgb(255, 117, 11);
+}
+.regulerbtn{
+    background-color: rgb(255, 117, 11);
+    color: black;
+}
+.logins{
+    background-color: rgb(50, 50, 250);
+    color: white;
+    border-radius: 2px;
+}

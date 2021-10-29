@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+
+
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  height: 32px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #1a7595;
+  color: #000000;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-bottom: 3px solid #1a7595;
+  color: #000000;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #1a7595;
+  border: none;
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.fa-google{
+  color: goldenrod;
+  cursor: pointer;
+}
+.fa-facebook {
+  color: rgb(42, 42, 167);
+  cursor: pointer;
+}
+.fa-check-circle{
+  color: rgb(71, 214, 78);
+}
+
+.title{
+  font-size: 2rem;
+  color: rgb(0, 0, 0) ;
+  letter-spacing: -2px;
+    text-shadow: 0 13.36px 8.896px #000000,0 -2px 1px #484848,0 -2px 1px ;
+  letter-spacing: 2px;
+}
+
+.fa-check-circle{
+  color: rgb(71, 237, 71);
+}
+
+.service-btn{
+  background-color: #1a7595;
+  color: rgb(255, 255, 255);
+  width: 200px;
+}
+.login-form{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-left: 6px inset goldenrod;
+  border-bottom: 6px inset goldenrod;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+
+}
+.fa-check-circle{
+  color: rgb(71, 255, 71);
+}
+.title2{
+
+  font-size: 3rem;
+font-weight: 700;
+  color: #1a7595 ;
+  letter-spacing: -2px;
+    text-shadow: 0 13.36px 8.896px #000000,0 -2px 1px #484848,0 -2px 1px ;
+  letter-spacing: 2px;
+}
+#colam{
+  margin-left: 1px solid black;
+  margin-right: 1px solid black;
+}
