@@ -7,3 +7,10 @@
 .allbtn:hover{
     background-color: rgb(68, 86, 255);
 }
+.cards:hover .imgs{
+    transform: scale(1.1);
+    transition: 1s ease-in-out;
+}
+.cards{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

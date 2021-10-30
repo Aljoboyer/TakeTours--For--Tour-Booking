@@ -16,6 +16,9 @@ import Eventregister from './copmonents/Tourregister/Eventregister';
 import Notfound from './copmonents/Notfound/Notfound';
 import Yourevents from './copmonents/Yourevents/Yourevents';
 import Manageevent from './copmonents/Managevent/Manageevent';
+import Addevent from './copmonents/Addevent/Addevent';
+import Footer from './copmonents/Footer/Footer';
+import Privateroute from './Privateroute/Privateroute'
 function App() {
   return (
     <div className="">
@@ -32,19 +35,23 @@ function App() {
                 <Route exact path="/register">
                     <Register></Register>
                 </Route>
-                <Route exact path="/eventregister/:id">
+                <Privateroute exact path="/eventregister/:id">
                     <Eventregister></Eventregister>
-                </Route>
+                </Privateroute>
                 <Route exact path="/yourevents">
                     <Yourevents></Yourevents>
                 </Route>
                 <Route exact path="/manageevent">
                   <Manageevent></Manageevent>
                 </Route>
+                <Route exact path="/addevent">
+                    <Addevent></Addevent>
+                </Route>
                 <Route exact path="*">
                     <Notfound></Notfound>
                 </Route>
             </Switch>
+            <Footer></Footer>
         </Router>
       </Authcontext>
     </div>

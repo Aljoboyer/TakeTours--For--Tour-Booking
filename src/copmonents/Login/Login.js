@@ -65,7 +65,7 @@ const Login = () => {
                 <p><i className="mt-3 mb-2 text-center far fa-circle fa-2x">R</i></p>
                     <h5 className="mb-3 text-dark fw-bold">Sign in with</h5>
                     <i onClick={GoogleSignin}  className="ms-2 mb-2 fab fa-google fa-3x"></i>
-                <p className="mt-3" ><small>New to RedOnion?</small></p>
+                <p className="mt-3" ><small>New to TakeTours?</small></p>
                <p className="fs-5 fw-bold" > <Link to="/register" >Create  Account</Link></p>
 
             </Col>

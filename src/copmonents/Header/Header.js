@@ -18,14 +18,17 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                <NavLink className="navss text-primary fs-5 fw-bold ms-3" to="/">Home</NavLink>
-                <NavLink className="navss text-dark  ms-3 fw-bold " to="/yourevents">Your Booking</NavLink>
-                <NavLink className="navss text-dark ms-3 fw-bold" to="/manageevent">Manage Booking</NavLink>
-
+                <NavLink className="navss text-primary fs-6 fw-bold ms-3" to="/">Home</NavLink>
+                {
+                    user.email ? <Nav><NavLink className="navss text-primary fs-6  ms-3 fw-bold " to="/yourevents">Your Booking</NavLink>
+                    <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/manageevent">Manage Booking</NavLink>
+                    <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/addevent">Add-Tour-Event</NavLink> </Nav>:  <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/">About us</NavLink>
+                }
+               
                 </Nav>
                 <Nav>
                 {
-                    user.email ? <Nav><p className="text-primary me-2"><b>{user.displayName}</b></p> <Button onClick={LogoutHandler} className="btn btn-warning text-dark">Log Out</Button></Nav> : <NavLink className="navss logins p-2 text-light fw-bold fs-5 " to="/login">Log-in</NavLink>
+                    user.email ? <Nav><p className="text-dark me-2"><b>{user.displayName}</b></p> <Button onClick={LogoutHandler} className="btn btn-warning text-dark">Log Out <i className="fas fa-sign-out-alt"></i></Button></Nav> : <NavLink className="navss logins p-2 text-light fw-bold fs-5 " to="/login">Log-in <i className="fas fa-sign-in-alt"></i></NavLink>
                 }
                 </Nav>
             </Navbar.Collapse>

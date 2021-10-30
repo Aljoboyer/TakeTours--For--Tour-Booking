@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import {Col, Row} from 'react-bootstrap';
+import {Col, Modal, Row,Button} from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
 import logo from '../../asset/logo.PNG'
+import Permissionmodal from '../Permissonmodal/Permissionmodal';
 const Eventregister = () => {
    
     const [event, setEvent] = useState({})
     const {id} = useParams()
     const { register,reset, handleSubmit, watch, formState: { errors } } =useForm();
+    const [show, setShow] = useState(false);
+    
     useEffect(() => {
         fetch(`http://localhost:5000/events/${id}`)
         .then(res => res.json())
@@ -29,7 +32,7 @@ const Eventregister = () => {
             {
                 if(events.insertedId)
                 {
-                    alert('Register Success Fully')
+                    setShow(true)
                     reset()
                 }
             })
@@ -71,6 +74,7 @@ const Eventregister = () => {
                 </Row>
                 </Col>
             </Row>
+            <Permissionmodal setShow={setShow} show={show}>Events Register</Permissionmodal>
         </div>
     );
 };

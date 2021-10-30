@@ -1,5 +1,6 @@
 .navss{
     text-decoration: none;
+    
 }
 span{
     color:rgb(50, 50, 250);
@@ -15,4 +16,7 @@ span{
     background-color: rgb(50, 50, 250);
     color: white;
     border-radius: 2px;
+}
+.navss:active{
+    background-color: rgb(123, 123, 206);
 }

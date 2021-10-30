@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {Modal, Row,Button} from 'react-bootstrap';
 import useAuth from '../../Context/useAuth';
+import Deletemodal from '../Deletemodal/Deletemodal';
 import Yourevent from './Yourevent';
 const Yourevents = () => {
     const {user} = useAuth();
     const [emaildata, setEmaildata] = useState([])
-    const [show, setShow] = useState(false);
+    const [deleteshow, setDeletehow] = useState(false);
     const [isdelete, setIsdelete] = useState(false);
     const [idset, setIdset] = useState(null)
     useEffect(() => {
@@ -24,7 +25,7 @@ const Yourevents = () => {
         })
     },[user.email])
     const DeleteHandler = (id,isadd) => {
-        setShow(isadd)
+        setDeletehow(isadd)
         setIdset(id)
         setIsdelete(true)
         if(isdelete)
@@ -50,34 +51,16 @@ const Yourevents = () => {
 
     return (
         <div className="container-fluid">
-            <Row className="g-4 justify-content-center">
+            
+           { emaildata.length ? <Row className="g-4 justify-content-center">
                 {
                     emaildata?.map(event => <Yourevent DeleteHandler={DeleteHandler} key={Math.random()} event={event}></Yourevent>)
                 }
-            </Row>
+            </Row>: <Row className="notbookrow d-flex  align-items-center"><div className="text-center">
+            <h2 className="fs-1 fw-bold htow">No Events Books Yet <i className="far fa-calendar-alt"></i></h2></div></Row> }
 
-            <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title ><i className="fas fa-trash-alt fa-3x"></i></Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="text-danger fs-4">
-        Are You sure-! Want to delete this event.?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => {
-              setShow(false);
-              setIsdelete(false)
-          }}>
-            No
-          </Button>
-          <Button onClick={() => DeleteHandler(idset)} variant="primary">Yse Sure</Button>
-        </Modal.Footer>
-      </Modal>
+        <Deletemodal idset={idset} deleteshow={deleteshow} setIsdelete={setIsdelete} setDeletehow={setDeletehow} DeleteHandler={DeleteHandler}></Deletemodal>
+     
         </div>
     );
 };
