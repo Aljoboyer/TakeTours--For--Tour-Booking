@@ -12,7 +12,7 @@ const Eventregister = () => {
     const [show, setShow] = useState(false);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/events/${id}`)
+        fetch(`https://rocky-fjord-96059.herokuapp.com/events/${id}`)
         .then(res => res.json())
         .then(data => setEvent(data))
     },[])
@@ -20,7 +20,7 @@ const Eventregister = () => {
     const onSubmit = data => {
         data.status = "Pending"
         data.img = event.img
-        fetch('http://localhost:5000/registerevents', {
+        fetch('https://rocky-fjord-96059.herokuapp.com/registerevents', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

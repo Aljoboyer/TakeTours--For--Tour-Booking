@@ -12,7 +12,7 @@ const Yourevents = () => {
     useEffect(() => {
         const emailarray = [];
         emailarray.push(user.email)
-        fetch('http://localhost:5000/registerevents/byemail', {
+        fetch('https://rocky-fjord-96059.herokuapp.com/registerevents/byemail', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -31,7 +31,7 @@ const Yourevents = () => {
         if(isdelete)
         {
             
-            fetch(`http://localhost:5000/registerevents/${id}`, {
+            fetch(`https://rocky-fjord-96059.herokuapp.com/registerevents/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

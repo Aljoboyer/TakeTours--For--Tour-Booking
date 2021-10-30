@@ -12,7 +12,7 @@ const Manageevent = () => {
 
     const [deleteshow, setDeletehow] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/registerevents')
+        fetch('https://rocky-fjord-96059.herokuapp.com/registerevents')
         .then(res => res.json())
         .then(data => setRegisterevents(data))
     },[registerevents])
@@ -22,7 +22,7 @@ const Manageevent = () => {
         setIsdelete(true)
         if(isdelete)
         {
-            fetch(`http://localhost:5000/registerevents/${id}`, {
+            fetch(`https://rocky-fjord-96059.herokuapp.com/registerevents/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
@@ -39,7 +39,7 @@ const Manageevent = () => {
     }
     const ApprovedHadnlder = id => {
         const approvedata ={status: "Approved"}
-        fetch(`http://localhost:5000/registerevents/${id}`, {
+        fetch(`https://rocky-fjord-96059.herokuapp.com/registerevents/${id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json'

@@ -13,7 +13,7 @@ const Tourevents = () => {
             {
                 events.map(event => <Event key={event.id} event={event}></Event>)
             }
-        </Row> : <Spinner animation="border" variant="dark" />
+        </Row> : <div className="spinnerss mx-auto"></div>
         }
 
         </>

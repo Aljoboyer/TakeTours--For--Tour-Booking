@@ -7,7 +7,7 @@ const Addevent = () => {
 
     const onSubmit = data => {
         
-        fetch('http://localhost:5000/events', {
+        fetch('https://rocky-fjord-96059.herokuapp.com/events', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
