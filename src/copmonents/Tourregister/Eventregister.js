@@ -60,6 +60,14 @@ const Eventregister = () => {
                            <input className="w-100" type="email" {...register("email", { required: true })} />
                            {errors.email && <p className="text-danger">This field is required</p>}
 
+                           <label htmlFor="">Your Location</label>
+                           <input className="w-100" type="text" {...register("location", { required: true })} />
+                           {errors.location && <p className="text-danger">This field is required</p>}
+
+                           <label htmlFor="">Phone</label>
+                           <input className="w-100" type="number" {...register("phone", { required: true })} />
+                           {errors.phone && <p className="text-danger">This field is required</p>}
+
                            <label htmlFor="">Date</label>
                            <input className="w-100" type ="date" {...register("date", { required: true})} />
                            {errors.date && <p className="text-danger">This field is required</p>}
