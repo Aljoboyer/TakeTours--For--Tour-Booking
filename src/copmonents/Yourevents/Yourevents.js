@@ -56,8 +56,7 @@ const Yourevents = () => {
                 {
                     emaildata?.map(event => <Yourevent DeleteHandler={DeleteHandler} key={Math.random()} event={event}></Yourevent>)
                 }
-            </Row>: <Row className="notbookrow d-flex  align-items-center"><div className="text-center">
-            <h2 className="fs-1 fw-bold htow">No Events Books Yet <i className="far fa-calendar-alt"></i></h2></div></Row> }
+            </Row>: <div className="spinnerss mx-auto"></div>   }
 
         <Deletemodal idset={idset} deleteshow={deleteshow} setIsdelete={setIsdelete} setDeletehow={setDeletehow} DeleteHandler={DeleteHandler}></Deletemodal>
      

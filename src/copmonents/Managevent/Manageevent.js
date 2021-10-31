@@ -9,13 +9,14 @@ const Manageevent = () => {
     const [show, setShow] = useState(false);
     const [isdelete, setIsdelete] = useState(false);
     const [idset, setIdset] = useState(null)
-
+    const [fordepend , setFordepend] = useState([])
     const [deleteshow, setDeletehow] = useState(false);
+    
     useEffect(() => {
         fetch('https://rocky-fjord-96059.herokuapp.com/registerevents')
         .then(res => res.json())
         .then(data => setRegisterevents(data))
-    },[registerevents])
+    },[fordepend])
     const DeleteHandler = (id,isadd) => {
         setDeletehow(isadd)
         setIdset(id)
@@ -52,22 +53,21 @@ const Manageevent = () => {
             {
                 setShow(true)
                 const newdata = [...registerevents]
-                setRegisterevents(newdata)
+                setFordepend(newdata)
                 
             }
         })
     }
     return (
         <div className="container-fluid">
-            {
-                registerevents.length ? <Row className="g-4 justify-content-center">
+           {
+                registerevents.length !==0 ? <Row className="g-4 justify-content-center">
                 {
                     registerevents?.map(event => <Allevent ApprovedHadnlder={ApprovedHadnlder} DeleteHandler={DeleteHandler} key={event._id}
                         event={event}></Allevent>)
                 }
-            </Row> : <Row className="notbookrow d-flex  align-items-center"><div className="text-center">
-                <h2 className="fs-1 fw-bold htow">No Events Books Yet <i className="far fa-calendar-alt"></i></h2></div></Row> 
-            }
+            </Row> : <div className="spinnerss mx-auto"></div>  
+            }  
             <Permissionmodal setShow={setShow} show={show}>Events Approved</Permissionmodal>
 
             <Deletemodal idset={idset} deleteshow={deleteshow} setIsdelete={setIsdelete} setDeletehow={setDeletehow} DeleteHandler={DeleteHandler}></Deletemodal>

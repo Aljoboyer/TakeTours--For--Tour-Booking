@@ -44,7 +44,7 @@ const Register = () => {
         <Row className="justify-content-center mt-4">
             <Col lg={6} md={12} sm={12} className="login-form">
                {
-                   user.email ? <h1 className="text-center">Register SuccessFully</h1> : <form onSubmit={handleSubmit(onSubmit)} >
+                   user.email ? <h1 className="text-center">Register SuccessFully <i className="fas fa-check-circle fa-3x"></i></h1> : <form onSubmit={handleSubmit(onSubmit)} >
                    <h2 className="title text-center mt-1">Create <img className="w-25  mb-4" src="" alt="" /> Account</h2>
                    <p className="text-danger">{regerror}</p>
                                <label htmlFor="">Name</label>

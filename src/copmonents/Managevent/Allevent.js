@@ -18,7 +18,7 @@ const Allevent = (props) => {
             </Card.Body>
             <Card.Body className="">
            {
-               status === 'Approved' ?  '' : <button onClick={() => {props.ApprovedHadnlder(_id)}} className="btn btn-success text-light">Approve Event</button> 
+               status === 'Approved' ?  <button className="btn btn-success text-light" disabled>Approve Event</button> : <button onClick={() => {props.ApprovedHadnlder(_id)}} className="btn btn-success text-light">Approve Event</button> 
             } 
                     <button onClick={() => {props.DeleteHandler(_id,true)}} className="ms-2 btn btn-danger text-light">Cancel Event</button>
             </Card.Body>

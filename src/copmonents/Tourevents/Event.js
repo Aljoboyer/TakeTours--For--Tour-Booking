@@ -6,7 +6,7 @@ const Event = (props) => {
     const {_id,img,name,short,time} = props.event;
     return (
         <Col lg={6} md={12} sm={12} className="cards">
-            <Row className="rowss">
+            <Row className="rowss pb-2">
                 <Col lg={6} md={6} sm={12}>
                     <img className="rounded imgs img-fluid" src={img} alt="" />
                 </Col>
