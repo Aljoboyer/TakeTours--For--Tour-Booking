@@ -61,7 +61,7 @@ const Addevent = () => {
                
             </Col>
         </Row>
-        <Permissionmodal setShow={setShow} show={show}>Events Register</Permissionmodal>
+        <Permissionmodal setShow={setShow} show={show}>Event Added</Permissionmodal>
    </div>
     );
 };
