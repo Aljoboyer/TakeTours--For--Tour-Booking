@@ -57,11 +57,7 @@ const useFirebase = () => {
     },[])
     //user LOG out
     const LogoutUser = () => {
-        signOut(auth).then(() => {
-            setUser({})
-          }).catch((error) => {
-            // An error happened.
-          });
+        return signOut(auth)
     }
     return {
         setUser,

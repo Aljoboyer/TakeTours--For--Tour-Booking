@@ -1,14 +1,21 @@
 import React from 'react';
 import {Container, Nav, Navbar,Button} from 'react-bootstrap';
-import {NavLink} from 'react-router-dom';
+import {NavLink,useHistory} from 'react-router-dom';
 import useAuth from '../../Context/useAuth';
 import './header.css';
 
 const Header = () => {
-    const {user,LogoutUser} = useAuth();
+    const {user,LogoutUser,setUser} = useAuth();
 
+    const history = useHistory()
     const LogoutHandler = () => {
         LogoutUser()
+        .then(() => {
+            setUser({})
+            history.push('/')
+          }).catch((error) => {
+            // An error happened.
+          });
     }
     return ( 
 <div className="container-fluid">
