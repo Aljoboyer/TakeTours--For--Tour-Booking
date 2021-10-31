@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import logo from '../../asset/logo.PNG'
+import Permissionmodal from '../Permissonmodal/Permissionmodal';
 const Addevent = () => {
     const { register,reset, handleSubmit, watch, formState: { errors } } =useForm();
+    const [show, setShow] = useState(false);
 
     const onSubmit = data => {
         
@@ -18,7 +20,7 @@ const Addevent = () => {
         .then(newevent => {
             if(newevent.insertedId)
             {
-                alert('Data Added');
+                setShow(true)
                 reset();
             }
         })
@@ -59,6 +61,7 @@ const Addevent = () => {
                
             </Col>
         </Row>
+        <Permissionmodal setShow={setShow} show={show}>Events Register</Permissionmodal>
    </div>
     );
 };
