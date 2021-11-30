@@ -28,8 +28,11 @@ const Header = () => {
                 <NavLink className="navss text-primary fs-6 fw-bold ms-3" to="/">Home</NavLink>
                 {
                     user.email ? <Nav><NavLink className="navss text-primary fs-6  ms-3 fw-bold " to="/yourevents">My Booking</NavLink>
-                    <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/manageevent">Manage All Booking</NavLink>
-                    <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/addevent">Add-Tour-Event</NavLink> </Nav>:  <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/">About us</NavLink>
+                    </Nav>:  <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/">About us</NavLink>
+                }
+                {
+                    user.email === 'admin@gmail.com' && <> <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/manageevent">Manage All Booking</NavLink>
+                    <NavLink className="navss text-primary fs-6 ms-3 fw-bold" to="/addevent">Add-Tour-Event</NavLink>  </>
                 }
                
                 </Nav>
